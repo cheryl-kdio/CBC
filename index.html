@@ -7,7 +7,6 @@
     <title>CBC | Cabinet Beaudelaire Conseil</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/92aa274529.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -40,7 +39,7 @@
                     votre disposition pour vous accompagner à travers toutes vos préoccupations juridiques les plus
                     complexes.
                 </p>
-                <button> Nous contacter </button>
+                <button><a href="tel:+2252721520799"> Nous contacter </a> </button>
             </div>
             <div class="placeholder"><img src="images/logo.png">
             </div>
@@ -192,12 +191,25 @@
             <main>
                 <p id="description">Remplissez ce formulaire pour une demande de rendez-vous.</p>
                 <form id="survey-form">
+
                     <label for="name">Nom :</label>
                     <input type="text" id="name-label" name="nom" placeholder="John Smith"
                         autocomplete="given-name"><br>
                     <label for="email">Email:</label>
-                    <input type="email" id="email-label" name="email" placeholder="jsmith@gmail.com"
+                    <input type="email" id="email-label" name="email" placeholder="JohnSmith@gmail.com"
                         autocomplete="given-name">
+                    <br>
+                    <label for="service">Service demandé:</label>
+                    <select>
+                        <option value="mediation">Médiation</option>
+                        <option value="arbitrage">Arbitrage</option>
+                        <option value="constitution_dentreprise">Constituion d'entreprise</option>
+                        <option value="redaction_contrats">Redaction de contrats</option>
+                        <option value="conseil_immobilier">Conseil immobilier</option>
+                        <option value="fiscalite">Fiscalité</option>
+                        <option value="recherche_financement">Recherche de financement</option>
+                        <option value="gestion_rh">Gestion de RH</option>
+                    </select>
                     <br>
                     <label for="date">Date de rendez-vous souhaitée:</label>
                     <input type="date" id="dropdown" name="date-rdv" defaultvalue="20/02/2023">

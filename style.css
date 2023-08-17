@@ -170,8 +170,8 @@ a {
 }
 
 .placeholder>img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 
 button {
@@ -366,7 +366,7 @@ input {
 
 .profile-page .profile-header .profile-image img {
     border-radius: 50%;
-    width: 140px;
+    width: 400px;
     border: 3px solid #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
 }
