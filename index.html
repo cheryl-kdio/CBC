@@ -159,78 +159,82 @@
     </div>
 
     <div class="section_three">
-        <div class="item" style="text-align: left;">
-            <p class="secondary-text">L'Équipe d'Experts : Notre Force, Votre Avantage !</p>
-            <p>
-                Chez Cabinet Beaudelaire Conseil, notre équipe d'experts constitue le cœur battant de notre engagement
-                envers l'excellence et le succès de nos clients. Chaque membre de notre équipe incarne une passion
-                ardente pour le droit et une détermination à fournir des solutions juridiques exceptionnelles qui
-                transcendent les attentes. </p>
-            <p>Forts de notre profonde compréhension des enjeux complexes qui peuvent
-                émerger dans le domaine juridique, nous mettons en œuvre une approche dynamique et innovante, adaptée à
-                chaque situation spécifique. Notre engagement envers votre réussite est inébranlable, et nous nous
-                efforçons constamment d'aller au-delà des normes pour vous offrir des conseils éclairés, des stratégies
-                judicieuses et une assistance complète tout au long de votre parcours juridique. </p>
-            <p>Votre confiance en
-                notre équipe est le moteur qui nous pousse à dépasser les frontières de l'excellence, car nous croyons
-                fermement que votre succès est également le nôtre.
-            </p>
-            <button><a href="a_propos.html">En savoir plus</a></button>
+        <div class="container">
+            <div class="item" style="text-align: left;">
+                <p class="secondary-text">L'Équipe d'Experts : Notre Force, Votre Avantage !</p>
+                <p>
+                    Chez Cabinet Beaudelaire Conseil, notre équipe d'experts constitue le cœur battant de notre
+                    engagement envers l'excellence et le succès de nos clients. Chaque membre de notre équipe incarne
+                    une passion ardente pour le droit et une détermination à fournir des solutions juridiques
+                    exceptionnelles qui transcendent les attentes. </p>
+                <p>Forts de notre profonde compréhension des enjeux complexes qui peuvent
+                    émerger dans le domaine juridique, nous mettons en œuvre une approche dynamique et innovante,
+                    adaptée à chaque situation spécifique. </p>
+                <p>Notre engagement envers votre réussite est inébranlable, et nous nous
+                    efforçons constamment d'aller au-delà des normes pour vous offrir des conseils éclairés, des
+                    stratégies judicieuses et une assistance complète tout au long de votre parcours juridique. </p>
+                <p>Votre confiance en notre équipe est le moteur qui nous pousse à dépasser les frontières de
+                    l'excellence, car nous croyons fermement que votre succès est également le nôtre.
+                </p>
+                <button><a href="a_propos.html">En savoir plus</a></button>
 
-        </div>
+            </div>
 
-        <div class="item">
-            <p class="secondary-text">Prendre rendez-vous</p>
-            <p>
-                Si vous cherchez un cabinet de conseil juridique dévoué, axé sur l'excellence et prêt à vous
-                accompagner à chaque étape de votre parcours, ne cherchez pas plus loin. Prenez rendez vous dès
-                maintenant pour discuter de vos besoins juridiques et découvrir comment nous pouvons vous aider à
-                naviguer dans le paysage juridique complexe avec confiance.
-            </p>
+            <div class="item">
+                <p class="secondary-text">Prendre rendez-vous</p>
+                <p>
+                    Si vous cherchez un cabinet de conseil juridique dévoué, axé sur l'excellence et prêt à vous
+                    accompagner à chaque étape de votre parcours, ne cherchez pas plus loin. Prenez rendez vous dès
+                    maintenant pour discuter de vos besoins juridiques et découvrir comment nous pouvons vous aider à
+                    naviguer dans le paysage juridique complexe avec confiance.
+                </p>
 
-            <main>
-                <p id="description">Remplissez ce formulaire pour une demande de rendez-vous.</p>
-                <form id="survey-form">
+                <main>
+                    <p id="description">Remplissez ce formulaire pour une demande de rendez-vous.</p>
+                    <form id="survey-form" action="envoi.php" method="post">
 
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name-label" name="nom" placeholder="John Smith"
-                        autocomplete="given-name"><br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email-label" name="email" placeholder="JohnSmith@gmail.com"
-                        autocomplete="given-name">
-                    <br>
-                    <label for="service">Service demandé:</label>
-                    <select>
-                        <option value="mediation">Médiation</option>
-                        <option value="arbitrage">Arbitrage</option>
-                        <option value="constitution_dentreprise">Constituion d'entreprise</option>
-                        <option value="redaction_contrats">Redaction de contrats</option>
-                        <option value="conseil_immobilier">Conseil immobilier</option>
-                        <option value="fiscalite">Fiscalité</option>
-                        <option value="recherche_financement">Recherche de financement</option>
-                        <option value="gestion_rh">Gestion de RH</option>
-                    </select>
-                    <br>
-                    <label for="date">Date de rendez-vous souhaitée:</label>
-                    <input type="date" id="dropdown" name="date-rdv" defaultvalue="20/02/2023">
-                    <br>
-                    <label for="time">Période de la journée souhaitée:
-                        <input type="radio" id="morning" name="time" value="matin">Matin
-                        <input type="radio" id="afternoon" name="time" value="apres-midi">Après-midi
-                    </label>
-                    <br>
-                    <label for="comment"><u>Un message à nous passer ?</u></label>
-                    <textarea id="comment" placeholder="Entrez votre commentaire ici."></textarea><br>
-                    <button type="submit">Envoyez</button>
-                </form>
-            </main>
+                        <label for="nom">Nom :</label>
+                        <input type="text" id="name-label" name="nom" placeholder="John Smith" autocomplete="given-name"
+                            required><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email-label" name="email" placeholder="JohnSmith@gmail.com"
+                            autocomplete="given-name" required>
+                        <br>
+                        <label for="service" required>Service demandé:</label>
+                        <select>
+                            <option name="service" value="mediation">Médiation</option>
+                            <option name="service" value="arbitrage">Arbitrage</option>
+                            <option name="service" value="constitution_dentreprise">Constituion d'entreprise</option>
+                            <option name="service" value="redaction_contrats">Redaction de contrats</option>
+                            <option name="service" value="conseil_immobilier">Conseil immobilier</option>
+                            <option name="service" value="fiscalite">Fiscalité</option>
+                            <option name="service" value="recherche_financement">Recherche de financement</option>
+                            <option name="service" value="gestion_rh">Gestion de rh</option>
+                            <option name="service" value="autre">Autre</option>
+
+                        </select>
+                        <br>
+                        <label for="date">Date de rendez-vous souhaitée:</label>
+                        <input type="date" id="dropdown" name="date" defaultvalue="20/02/2023" required>
+                        <br>
+                        <label for="periode">Période de la journée souhaitée:
+                            <input type="radio" id="morning" name="periode" value="matin" checked>Matin
+                            <input type="radio" id="afternoon" name="periode" value="apres-midi">Après-midi
+                        </label>
+                        <br>
+                        <label for="comment"><u>Un message à nous passer ?</u></label><br>
+                        <textarea id="comment" placeholder="Entrez votre commentaire ici."> </textarea><br>
+                        <button type="submit" name="envoyer">Envoyez</button>
+                    </form>
+                </main>
+            </div>
         </div>
     </div>
 
 
     <div class="section_four">
         <img src="images/CBC_black_sans_fond.png">
-        <div class="">
+        <div>
             <div class="nav_items" style="color: black;">
                 <p><a href="tel:+2252721520799"><i class="fa-solid fa-phone"></i></a></p>
                 <p><a href="mailto: cabinet.beaudelaire.conseil@gmail.com"><i
@@ -239,10 +243,15 @@
                 <p>Notre localisation</p>
                 <p>Prendre rendez-vous</p>
             </div>
-            <p></p>
+            <p>Nous sommes ouvert du lundi au vendredi de 7h30 à 18h30.</p>
+            <p>Mail: cabinet.beaudelaire.conseil@gmail.com</p>
+            <p>Tel: +2252721520799</p>
         </div>
     </div>
 
 </body>
 
 </html>
+
+
+<!-- Formulaire de contact -->
