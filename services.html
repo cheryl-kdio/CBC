@@ -27,8 +27,62 @@
 
         </div>
     </nav>
+
     <div class="special_section">
-        <h3>La médiation (MARD)</h3>
+        <div id="toc_container">
+            <div class="toc_title">
+                <p>Table des matières</p> <i class="fa-solid fa-bars fa-2xl"></i>
+            </div>
+
+            <ul class="toc_list">
+                <li><a href="#mediation">1 La médiation (MARD)</a> </li>
+                <li><a href="#arbitrage">2 L'arbitrage</a> </li>
+                <li><a href="#constitution_dentreprise">3 La constitution d'entreprise</a> </li>
+                <li><a href="#redaction_contrats">4 La redaction de contrats</a> </li>
+                <li><a href="#conseil_immobilier">5 Le conseil immobilier</a> </li>
+                <li><a href="#fiscalite">6 La fiscalité</a> </li>
+                <li><a href="#recherche_financements">7 La recherche de financements</a> </li>
+                <li><a href="#gestion_rh">8 La gestion de ressources humaines</a> </li>
+
+            </ul>
+        </div>
+
+        <script>
+            const tocContainer = document.getElementById('toc_container');
+            const tocList = tocContainer.querySelector('.toc_list');
+            const tocTitle = tocContainer.querySelector('.toc_title');
+
+            let isMenuOpen = false;
+
+            tocTitle.addEventListener('click', () => {
+                toggleMenu();
+            });
+
+            window.addEventListener('scroll', () => {
+                if (isInViewport(tocContainer) && !isMenuOpen) {
+                    toggleMenu();
+                } else if (!isInViewport(tocContainer) && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function toggleMenu() {
+                tocList.style.display = tocList.style.display === 'none' ? 'block' : 'none';
+                isMenuOpen = !isMenuOpen;
+            }
+        </script>
+
+        <h3 id="mediation">La médiation (MARD)</h3>
 
         <h4>Une Approche Novatrice</h4>
 
@@ -62,7 +116,7 @@
 
 
 
-        <h3>L'arbitrage</h3>
+        <h3 id="arbitrage">L'arbitrage</h3>
         <h4>L'Arbitrage en Lumière</h4>
 
         L'arbitrage, pilier de nos services juridiques, émerge comme une approche éclairée pour résoudre les litiges.
@@ -89,7 +143,7 @@
         notre cabinet de conseil juridique.
 
 
-        <h3>La constitution d'entreprise</h3>
+        <h3 id="constitution_dentreprise">La constitution d'entreprise</h3>
         <h4>L'Art de la Constitution d'Entreprise</h4>
 
         La constitution d'entreprise, au cœur de nos services juridiques, représente le point de départ pour votre
@@ -118,7 +172,7 @@
         entrepreneuriale avec clairvoyance et confiance.
 
 
-        <h3>La rédaction de contrats</h3>
+        <h3 id="redaction_contrats">La rédaction de contrats</h3>
         <h4>L'Art de la Rédaction de Contrats</h4>
 
         La rédaction de contrats, au cœur de notre expertise juridique, transcende la simple formalité pour devenir
@@ -150,7 +204,7 @@
         accords pérennes, propulsant ainsi vos projets vers le succès.
 
 
-        <h3>Le conseil immobilier</h3>
+        <h3 id="conseil_immobilier">Le conseil immobilier</h3>
         <h4>L'Éclairage du Conseil Immobilier</h4>
 
         Le conseil immobilier, au cœur de nos compétences juridiques, vous offre une perspective éclairée pour
@@ -187,7 +241,7 @@
         décisions stratégiques et fructueuses dans le domaine de l'immobilier.
 
 
-        <h3>La fiscalité</h3>
+        <h3 id="fiscalite">La fiscalité</h3>
         <h4> Éclairage Fiscal</h4>
 
         La fiscalité, au cœur de notre expertise juridique, éclaire le chemin à travers le
@@ -227,7 +281,7 @@
 
 
 
-        <h3>La recherche de financements</h3>
+        <h3 id="recherche_financement">La recherche de financements</h3>
         <h4>Exploration Financière</h4>
 
         La recherche de financements, au cœur de notre expertise juridique, vous
@@ -267,7 +321,7 @@
         financiers et concrétiser vos projets avec confiance et succès.
 
 
-        <h3>La gestion de ressources humaines</h3>
+        <h3 id="gestion_rh">La gestion de ressources humaines</h3>
         <h4> Cultiver le Capital Humain</h4>
 
         La gestion des ressources humaines, au cœur de notre expertise

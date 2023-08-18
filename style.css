@@ -44,6 +44,11 @@ img {
     text-decoration: underline;
 }
 
+.special_section {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 
@@ -342,7 +347,7 @@ input {
 }
 
 #comment {
-    width: 300px;
+    width: 250px;
     height: 200px;
     padding: 5px 5px;
     margin: 8px 0;
@@ -415,4 +420,59 @@ input {
     display: block;
     padding: 15px 0;
     color: #424242
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    font-size: 14px;
+    border: 3px solid #0d1a4e;
+    background: white;
+    z-index: 9;
+    line-height: 2em;
+    padding: 10px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.form-popup>form>textarea {
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.form-popup>form>#comment {
+    width: 100%;
+    height: 150px;
+}
+
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    font-size: 95%;
+    padding: 5px;
+    width: 40%;
+    position: fixed;
+    border: 3px solid #0d1a4e;
+    align-self: flex-end;
+
+}
+
+.toc_title {
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#toc_container li,
+#toc_container ul,
+#toc_container ul li {
+    list-style: outside none none !important;
 }
