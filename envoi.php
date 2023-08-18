@@ -10,7 +10,7 @@ if(isset($_POST['envoyer'])) {
 
 
   // Destinataire de l'e-mail
-  $destinataire = 'cabinet.beaudelaie.conseil@gmail.com';
+  $destinataire = 'cabinet.beaudelaire.conseil@gmail.com';
 
   // Sujet de l'e-mail
   $sujet = 'Prise de rendez-vous pour une affaire '.$service;
