@@ -193,36 +193,34 @@
                     <p id="description">Remplissez ce formulaire pour une demande de rendez-vous.</p>
                     <form id="survey-form" action="envoi.php" method="post">
 
-                        <label for="nom">Nom :</label>
+                        Nom :
                         <input type="text" id="name-label" name="nom" placeholder="John Smith" autocomplete="given-name"
                             required><br>
-                        <label for="email">Email:</label>
+                        Email :
                         <input type="email" id="email-label" name="email" placeholder="JohnSmith@gmail.com"
                             autocomplete="given-name" required>
                         <br>
-                        <label for="service" required>Service demandé:</label>
-                        <select>
-                            <option name="service" value="mediation">Médiation</option>
-                            <option name="service" value="arbitrage">Arbitrage</option>
-                            <option name="service" value="constitution_dentreprise">Constituion d'entreprise</option>
-                            <option name="service" value="redaction_contrats">Redaction de contrats</option>
-                            <option name="service" value="conseil_immobilier">Conseil immobilier</option>
-                            <option name="service" value="fiscalite">Fiscalité</option>
-                            <option name="service" value="recherche_financement">Recherche de financement</option>
-                            <option name="service" value="gestion_rh">Gestion de rh</option>
-                            <option name="service" value="autre">Autre</option>
-
+                        Service demandé
+                        <select name="service">
+                            <option value="mediation">Médiation</option>
+                            <option value="arbitrage">Arbitrage</option>
+                            <option value="constitution_dentreprise">Constituion d'entreprise</option>
+                            <option value="redaction_contrats">Redaction de contrats</option>
+                            <option value="conseil_immobilier">Conseil immobilier</option>
+                            <option value="fiscalite">Fiscalité</option>
+                            <option value="recherche_financement">Recherche de financement</option>
+                            <option value="gestion_rh">Gestion de rh</option>
+                            <option value="autre">Autre</option>
                         </select>
                         <br>
-                        <label for="date">Date de rendez-vous souhaitée:</label>
-                        <input type="date" id="dropdown" name="date" defaultvalue="20/02/2023" required>
+                        Date de rendez-vous souhaitée:
+                        <input type="date" id="date" name="date" defaultvalue="20/02/2023" required>
                         <br>
-                        <label for="periode">Période de la journée souhaitée:
-                            <input type="radio" id="morning" name="periode" value="matin" checked>Matin
-                            <input type="radio" id="afternoon" name="periode" value="apres-midi">Après-midi
-                        </label>
+                        Période de la journée souhaitée:
+                        <input type="radio" id="morning" name="periode" value="matin" checked>Matin
+                        <input type="radio" id="afternoon" name="periode" value="apres-midi">Après-midi
                         <br>
-                        <label for="comment"><u>Un message à nous passer ?</u></label><br>
+                        <u>Un message à nous passer ?</u><br>
                         <textarea id="comment" placeholder="Entrez votre commentaire ici."> </textarea><br>
                         <button type="submit" name="envoyer">Envoyez</button>
                     </form>

@@ -1,9 +1,9 @@
 <?php
-if(isset($_POST['envoyer'])) {
+if(isset($_POST['envoyer']) or $_SERVER["REQUEST_METHOD"] == "POST") {
   $nom = $_POST['nom'];
   $email = $_POST['email'];
   $comment = $_POST['comment'];
-  $service = $_POST['service'];
+  $service = filter_input(INPUT_POST, 'service', FILTER_SANITIZE_STRING);
   $date = $_POST['date'];
   $periode = $_POST['periode'];
 
