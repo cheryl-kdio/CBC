@@ -18,7 +18,56 @@
         <div> <a href="a_propos.html">A propos de CBC </a></div>
         <div class="nav_items">
             <div><a href="tel:+2252721520799"><i class="fa-solid fa-phone" style="color: #ffffff;"></i></a></div>
-            <div><i class="fa-regular fa-calendar-check" style="color: #ffffff;"></i></div>
+            <div onclick="openForm()"><i class="fa-regular fa-calendar-check" style="color: #ffffff;"></i></div>
+
+            <div class="form-popup" id="myForm">
+                <p id="description">Remplissez ce formulaire pour une demande de rendez-vous.</p>
+                <form id="survey-form" action="envoi.php" method="post">
+
+                    Nom :
+                    <input type="text" id="name-label" name="nom" placeholder="John Smith" autocomplete="given-name"
+                        required><br>
+                    Email :
+                    <input type="email" id="email-label" name="email" placeholder="JohnSmith@gmail.com"
+                        autocomplete="given-name" required>
+                    <br>
+                    Service demandé
+                    <select name="service">
+                        <option value="mediation">Médiation</option>
+                        <option value="arbitrage">Arbitrage</option>
+                        <option value="constitution_dentreprise">Constituion d'entreprise</option>
+                        <option value="redaction_contrats">Redaction de contrats</option>
+                        <option value="conseil_immobilier">Conseil immobilier</option>
+                        <option value="fiscalite">Fiscalité</option>
+                        <option value="recherche_financement">Recherche de financement</option>
+                        <option value="gestion_rh">Gestion de rh</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <br>
+                    Date de rendez-vous souhaitée:
+                    <input type="date" id="date" name="date" defaultvalue="20/02/2023" required>
+                    <br>
+                    Période de la journée souhaitée:
+                    <input type="radio" id="morning" name="periode" value="matin" checked>Matin
+                    <input type="radio" id="afternoon" name="periode" value="apres-midi">Après-midi
+                    <br>
+                    <u>Un message à nous passer ?</u><br>
+                    <textarea id="comment" placeholder="Entrez votre commentaire ici."> </textarea><br>
+                    <button type="submit" name="envoyer">Envoyer</button>
+                    <button type="button" onclick="closeForm()">Fermer</button>
+                </form>
+            </div>
+
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>
+
             <div><a href="mailto: cabinet.beaudelaire.conseil@gmail.com">
                     <i class="fa-sharp fa-regular fa-envelope" style="color: #ffffff;"></i></a>
             </div>
@@ -27,6 +76,7 @@
 
         </div>
     </nav>
+
 
     <div class="special_section">
         <h3>L'Équipe d'Experts : Notre Force, Votre Avantage !</h3>

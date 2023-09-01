@@ -11,14 +11,62 @@
 </head>
 
 <body>
-
     <nav class="navigation">
         <a href="index.html"><img src="images/CBC_sans_fond.png"></a>
         <div> <a href="services.html">Services</a></div>
         <div> <a href="a_propos.html">A propos de CBC </a></div>
         <div class="nav_items">
             <div><a href="tel:+2252721520799"><i class="fa-solid fa-phone" style="color: #ffffff;"></i></a></div>
-            <div><i class="fa-regular fa-calendar-check" style="color: #ffffff;"></i></div>
+            <div onclick="openForm()"><i class="fa-regular fa-calendar-check" style="color: #ffffff;"></i></div>
+
+            <div class="form-popup" id="myForm">
+                <p id="description">Remplissez ce formulaire pour une demande de rendez-vous.</p>
+                <form id="survey-form" action="envoi.php" method="post">
+
+                    Nom :
+                    <input type="text" id="name-label" name="nom" placeholder="John Smith" autocomplete="given-name"
+                        required><br>
+                    Email :
+                    <input type="email" id="email-label" name="email" placeholder="JohnSmith@gmail.com"
+                        autocomplete="given-name" required>
+                    <br>
+                    Service demandé
+                    <select name="service">
+                        <option value="mediation">Médiation</option>
+                        <option value="arbitrage">Arbitrage</option>
+                        <option value="constitution_dentreprise">Constituion d'entreprise</option>
+                        <option value="redaction_contrats">Redaction de contrats</option>
+                        <option value="conseil_immobilier">Conseil immobilier</option>
+                        <option value="fiscalite">Fiscalité</option>
+                        <option value="recherche_financement">Recherche de financement</option>
+                        <option value="gestion_rh">Gestion de rh</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <br>
+                    Date de rendez-vous souhaitée:
+                    <input type="date" id="date" name="date" defaultvalue="20/02/2023" required>
+                    <br>
+                    Période de la journée souhaitée:
+                    <input type="radio" id="morning" name="periode" value="matin" checked>Matin
+                    <input type="radio" id="afternoon" name="periode" value="apres-midi">Après-midi
+                    <br>
+                    <u>Un message à nous passer ?</u><br>
+                    <textarea id="comment" placeholder="Entrez votre commentaire ici."> </textarea><br>
+                    <button type="submit" name="envoyer">Envoyer</button>
+                    <button type="button" onclick="closeForm()">Fermer</button>
+                </form>
+            </div>
+
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>
+
             <div><a href="mailto: cabinet.beaudelaire.conseil@gmail.com">
                     <i class="fa-sharp fa-regular fa-envelope" style="color: #ffffff;"></i></a>
             </div>
@@ -29,60 +77,45 @@
     </nav>
 
     <div class="special_section">
-        <div id="toc_container">
-            <div class="toc_title">
-                <p>Table des matières</p> <i class="fa-solid fa-bars fa-2xl"></i>
+
+        <div style="display: flex; justify-content: space-between;">
+            <h3 id="mediation">La médiation (MARD)</h3>
+            <div id="toc_container">
+                <div class="toc_title">
+                    <p>Table des matières</p>
+                </div>
+
+                <ul class="toc_list">
+                    <li><a href="#mediation">1 La médiation (MARD)</a> </li>
+                    <li><a href="#arbitrage">2 L'arbitrage</a> </li>
+                    <li><a href="#constitution_dentreprise">3 La constitution d'entreprise</a> </li>
+                    <li><a href="#redaction_contrats">4 La redaction de contrats</a> </li>
+                    <li><a href="#conseil_immobilier">5 Le conseil immobilier</a> </li>
+                    <li><a href="#fiscalite">6 La fiscalité</a> </li>
+                    <li><a href="#recherche_financements">7 La recherche de financements</a> </li>
+                    <li><a href="#gestion_rh">8 La gestion de ressources humaines</a> </li>
+
+                </ul>
             </div>
 
-            <ul class="toc_list">
-                <li><a href="#mediation">1 La médiation (MARD)</a> </li>
-                <li><a href="#arbitrage">2 L'arbitrage</a> </li>
-                <li><a href="#constitution_dentreprise">3 La constitution d'entreprise</a> </li>
-                <li><a href="#redaction_contrats">4 La redaction de contrats</a> </li>
-                <li><a href="#conseil_immobilier">5 Le conseil immobilier</a> </li>
-                <li><a href="#fiscalite">6 La fiscalité</a> </li>
-                <li><a href="#recherche_financements">7 La recherche de financements</a> </li>
-                <li><a href="#gestion_rh">8 La gestion de ressources humaines</a> </li>
+            <script>
+                const tocContainer = document.getElementById('toc_container');
+                const tocList = tocContainer.querySelector('.toc_list');
+                const tocTitle = tocContainer.querySelector('.toc_title');
 
-            </ul>
-        </div>
+                let isMenuOpen = false;
 
-        <script>
-            const tocContainer = document.getElementById('toc_container');
-            const tocList = tocContainer.querySelector('.toc_list');
-            const tocTitle = tocContainer.querySelector('.toc_title');
-
-            let isMenuOpen = false;
-
-            tocTitle.addEventListener('click', () => {
-                toggleMenu();
-            });
-
-            window.addEventListener('scroll', () => {
-                if (isInViewport(tocContainer) && !isMenuOpen) {
+                tocTitle.addEventListener('click', () => {
                     toggleMenu();
-                } else if (!isInViewport(tocContainer) && isMenuOpen) {
-                    toggleMenu();
+                });
+
+
+                function toggleMenu() {
+                    tocList.style.display = tocList.style.display === 'none' ? 'block' : 'none';
+                    isMenuOpen = !isMenuOpen;
                 }
-            });
-
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-
-            function toggleMenu() {
-                tocList.style.display = tocList.style.display === 'none' ? 'block' : 'none';
-                isMenuOpen = !isMenuOpen;
-            }
-        </script>
-
-        <h3 id="mediation">La médiation (MARD)</h3>
+            </script>
+        </div>
 
         <h4>Une Approche Novatrice</h4>
 

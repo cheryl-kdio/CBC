@@ -457,10 +457,8 @@ input {
     font-size: 95%;
     padding: 5px;
     width: 40%;
-    position: fixed;
     border: 3px solid #0d1a4e;
     align-self: flex-end;
-
 }
 
 .toc_title {
@@ -475,4 +473,8 @@ input {
 #toc_container ul,
 #toc_container ul li {
     list-style: outside none none !important;
+}
+
+.toc_list {
+    display: none;
 }
