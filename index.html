@@ -7,6 +7,7 @@
     <title>CBC | Cabinet Beaudelaire Conseil</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/92aa274529.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -23,13 +24,13 @@
                 <form id="survey-form" action="envoi.php" method="post">
 
                     Nom :
-                    <input type="text" id="name-label" name="nom" placeholder="John Smith" autocomplete="given-name"
+                    <input type="text" id="name-label" name="nom" placeholder="xxxxxx" autocomplete="given-name"
                         required><br>
                     Email :
-                    <input type="email" id="email-label" name="email" placeholder="JohnSmith@gmail.com"
+                    <input type="email" id="email-label" name="email" placeholder="xxxxxx@gmail.com"
                         autocomplete="given-name" required>
                     <br>
-                    Service demandé
+                    Service demandé :
                     <select name="service">
                         <option value="mediation">Médiation</option>
                         <option value="arbitrage">Arbitrage</option>
@@ -56,21 +57,16 @@
                 </form>
             </div>
 
-            <script>
-                function openForm() {
-                    document.getElementById("myForm").style.display = "block";
-                }
 
-                function closeForm() {
-                    document.getElementById("myForm").style.display = "none";
-                }
-            </script>
+            <div> <a title="Linkedin" href="https://www.linkedin.com/company/cabinet-beaudelaire-conseil/"><i
+                        class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a></div>
 
             <div><a href="mailto: cabinet.beaudelaire.conseil@gmail.com">
                     <i class="fa-sharp fa-regular fa-envelope" style="color: #ffffff;"></i></a>
             </div>
             <div style="color: #ffffff;"> <i class="fa-sharp fa-solid fa-location-pin" style="color: #ffffff;"></i>
                 Côte d'Ivoire</div>
+
 
         </div>
     </nav>
@@ -88,7 +84,7 @@
                     votre disposition pour vous accompagner à travers toutes vos préoccupations juridiques les plus
                     complexes.
                 </p>
-                <button><a href="tel:+2252721520799"> Nous contacter </a> </button>
+                <a href="tel:+2252721520799"> <button> Nous contacter </button></a>
             </div>
             <div class="placeholder"><img src="images/logo.png">
             </div>
@@ -240,13 +236,13 @@
                     <form id="survey-form" action="envoi.php" method="post">
 
                         Nom :
-                        <input type="text" id="name-label" name="nom" placeholder="John Smith" autocomplete="given-name"
+                        <input type="text" id="name-label" name="nom" placeholder="xxxxxx" autocomplete="given-name"
                             required><br>
                         Email :
-                        <input type="email" id="email-label" name="email" placeholder="JohnSmith@gmail.com"
+                        <input type="email" id="email-label" name="email" placeholder="xxxxxx@gmail.com"
                             autocomplete="given-name" required>
                         <br>
-                        Service demandé
+                        Service demandé :
                         <select name="service">
                             <option value="mediation">Médiation</option>
                             <option value="arbitrage">Arbitrage</option>
@@ -259,7 +255,7 @@
                             <option value="autre">Autre</option>
                         </select>
                         <br>
-                        Date de rendez-vous souhaitée:
+                        Date de rendez-vous souhaitée :
                         <input type="date" id="date" name="date" defaultvalue="20/02/2023" required>
                         <br>
                         Période de la journée souhaitée:
@@ -286,6 +282,8 @@
                 <p>cabinet.beaudelaire.conseil@gmail.com</a>
                 </p>
                 <p>Nous retrouver</p>
+                <a title="Linkedin" href="https://www.linkedin.com/company/cabinet-beaudelaire-conseil/"><i
+                        class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </div>

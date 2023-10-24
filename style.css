@@ -28,6 +28,7 @@ img {
 
 
 .section_four {
+    align-items: center;
     border-top: #192246 5px solid;
 }
 
@@ -123,6 +124,8 @@ img {
     display: flex;
     gap: 16px;
     margin-left: auto;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav_items>p {
@@ -386,9 +389,15 @@ input {
 .profile-page .profile-header .profile-image img {
     border-radius: 50%;
     width: 140px;
+    height: 140px;
     border: 3px solid #fff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    object-fit: cover;
+    /* Recadrer l'image */
+    object-position: center;
+    /* Centrer l'image */
 }
+
 
 .profile-page .profile-header .social-icon a {
     margin: 0 5px
@@ -451,30 +460,76 @@ input {
     height: 150px;
 }
 
+.content-container {
+    display: flex;
+    padding: 20px;
+    /* Ajoutez un peu d'espace autour du contenu */
+}
+
+
+
 #toc_container {
-    background: #f9f9f9 none repeat scroll 0 0;
-    border: 1px solid #aaa;
-    font-size: 95%;
-    padding: 5px;
-    width: 40%;
+    flex: 1;
+    /* Prend 1 part de l'espace disponible */
+    margin-right: 20px;
+    position: fixed;
+    /* Fixe la table des matières */
+    top: 15%;
+    /* Distance depuis le haut de la page */
+    right: 2%;
+    /* Distance depuis le côté gauche de la page */
+    width: 20%;
+    /* Largeur de la table des matières */
+    overflow-y: auto;
+    /* Permet le défilement si la table des matières est longue */
+    max-height: 80%;
+    /* Hauteur maximale de la table des matières */
+    background: #f9f9f9;
     border: 3px solid #0d1a4e;
-    align-self: flex-end;
+    border-radius: 10px;
+    z-index: 1000;
+    /* Assure que la table des matières reste au-dessus des autres éléments */
 }
 
 .toc_title {
-    font-weight: 700;
-    text-align: center;
     display: flex;
-    justify-content: space-between;
+    font-weight: 700;
     align-items: center;
+    justify-content: space-between;
+    margin: 10px;
 }
 
 #toc_container li,
 #toc_container ul,
 #toc_container ul li {
-    list-style: outside none none !important;
+    list-style: none;
+    /* Supprimez les puces de liste */
+    margin-bottom: 5px;
+    /* Ajoutez une marge en bas pour l'espacement */
 }
 
-.toc_list {
-    display: none;
+#toc_container a {
+    text-decoration: none;
+    /* Supprimez la décoration de texte pour les liens */
+    color: #0d1a4e;
+    /* Modifiez la couleur du texte pour les liens */
+}
+
+#toc_container a:hover {
+    text-decoration: underline;
+    /* Ajoutez une décoration de texte au survol pour indiquer la cliquabilité */
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet aux éléments de se déplacer à la ligne suivante si nécessaire */
+}
+
+.row>* {
+    flex: 1;
+    /* Cela fait en sorte que tous les éléments dans .row prennent la même espace */
+    box-sizing: border-box;
+    /* Inclut la bordure et le padding dans la taille de l'élément */
 }

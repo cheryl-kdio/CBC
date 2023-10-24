@@ -7,7 +7,7 @@
     <title>CBC | Cabinet Beaudelaire Conseil</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/92aa274529.js" crossorigin="anonymous"></script>
-
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -57,15 +57,9 @@
                 </form>
             </div>
 
-            <script>
-                function openForm() {
-                    document.getElementById("myForm").style.display = "block";
-                }
 
-                function closeForm() {
-                    document.getElementById("myForm").style.display = "none";
-                }
-            </script>
+            <div> <a title="Linkedin" href="https://www.linkedin.com/company/cabinet-beaudelaire-conseil/"><i
+                        class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a></div>
 
             <div><a href="mailto: cabinet.beaudelaire.conseil@gmail.com">
                     <i class="fa-sharp fa-regular fa-envelope" style="color: #ffffff;"></i></a>
@@ -73,50 +67,32 @@
             <div style="color: #ffffff;"> <i class="fa-sharp fa-solid fa-location-pin" style="color: #ffffff;"></i>
                 Côte d'Ivoire</div>
 
+
         </div>
     </nav>
 
-    <div class="special_section">
-
-        <div style="display: flex; justify-content: space-between;">
-            <h3 id="mediation">La médiation (MARD)</h3>
-            <div id="toc_container">
-                <div class="toc_title">
-                    <p>Table des matières</p>
-                </div>
-
-                <ul class="toc_list">
-                    <li><a href="#mediation">1 La médiation (MARD)</a> </li>
-                    <li><a href="#arbitrage">2 L'arbitrage</a> </li>
-                    <li><a href="#constitution_dentreprise">3 La constitution d'entreprise</a> </li>
-                    <li><a href="#redaction_contrats">4 La redaction de contrats</a> </li>
-                    <li><a href="#conseil_immobilier">5 Le conseil immobilier</a> </li>
-                    <li><a href="#fiscalite">6 La fiscalité</a> </li>
-                    <li><a href="#recherche_financements">7 La recherche de financements</a> </li>
-                    <li><a href="#gestion_rh">8 La gestion de ressources humaines</a> </li>
-
-                </ul>
-            </div>
-
-            <script>
-                const tocContainer = document.getElementById('toc_container');
-                const tocList = tocContainer.querySelector('.toc_list');
-                const tocTitle = tocContainer.querySelector('.toc_title');
-
-                let isMenuOpen = false;
-
-                tocTitle.addEventListener('click', () => {
-                    toggleMenu();
-                });
-
-
-                function toggleMenu() {
-                    tocList.style.display = tocList.style.display === 'none' ? 'block' : 'none';
-                    isMenuOpen = !isMenuOpen;
-                }
-            </script>
+    <div id="toc_container">
+        <div class="toc_title">
+            <p>Table des matières </p>
+            <i class="fa-solid fa-bars"></i>
         </div>
 
+        <ul class="toc_list">
+            <li><a href="#mediation">1 La médiation (MARD)</a> </li>
+            <li><a href="#arbitrage">2 L'arbitrage</a> </li>
+            <li><a href="#constitution_dentreprise">3 La constitution d'entreprise</a> </li>
+            <li><a href="#redaction_contrats">4 La redaction de contrats</a> </li>
+            <li><a href="#conseil_immobilier">5 Le conseil immobilier</a> </li>
+            <li><a href="#fiscalite">6 La fiscalité</a> </li>
+            <li><a href="#recherche_financements">7 La recherche de financements</a> </li>
+            <li><a href="#gestion_rh">8 La gestion de ressources humaines</a> </li>
+            <li><a href="#due_diligence">9 Due diligence</a> </li>
+        </ul>
+    </div>
+
+    <div class="special_section">
+
+        <h3 id="mediation">La médiation (MARD)</h3>
         <h4>Une Approche Novatrice</h4>
 
         La médiation, au cœur de notre offre de services juridiques, offre une nouvelle perspective pour résoudre les
@@ -393,7 +369,7 @@
         florissante et promouvoir un environnement de travail épanouissant
         et productif.
 
-        <h3> Due Diligence</h3>
+        <h3 id="due_diligence"> Due Diligence</h3>
 
         La prise de décisions éclairées est le fondement de toute entreprise prospère. Chez [Nom du Cabinet], nous
         comprenons que chaque choix que vous faites peut avoir des répercussions juridiques importantes. C'est pourquoi
@@ -435,6 +411,8 @@
                 <p>cabinet.beaudelaire.conseil@gmail.com</a>
                 </p>
                 <p>Nous retrouver</p>
+                <a title="Linkedin" href="https://www.linkedin.com/company/cabinet-beaudelaire-conseil/"><i
+                        class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </div>
