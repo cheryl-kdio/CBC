@@ -6,6 +6,28 @@ body {
     flex: 1;
 }
 
+/* Réduire la taille de la police lorsque la largeur de la fenêtre est inférieure à 768px */
+@media (max-width: 767px) {
+
+    .navigation>*,
+    .form-popup,
+    .section_four>*,
+    #toc_container>* {
+        font-size: 12px;
+    }
+}
+
+/* Réduire davantage la taille de la police lorsque la largeur de la fenêtre est inférieure à 576px */
+@media (max-width: 575px) {
+
+    .navigation>*,
+    .form-popup,
+    .section_four>*,
+    #toc_container>* {
+        font-size: 10px;
+    }
+}
+
 *,
 *:before,
 *:after {
@@ -30,6 +52,8 @@ img {
 .section_four {
     align-items: center;
     border-top: #192246 5px solid;
+    display: flex;
+    gap: 16px;
 }
 
 .special_section>h3 {
@@ -110,9 +134,8 @@ img {
     justify-content: center;
     gap: 16px;
     font-size: 18px;
-    flex-wrap: wrap;
     background: #091442;
-    padding: 1em 15%;
+    padding: 1px 5%;
 }
 
 .navigation>a>img {
@@ -474,11 +497,11 @@ input {
     margin-right: 20px;
     position: fixed;
     /* Fixe la table des matières */
-    top: 15%;
+    top: 10%;
     /* Distance depuis le haut de la page */
     right: 2%;
     /* Distance depuis le côté gauche de la page */
-    width: 20%;
+    width: 400px;
     /* Largeur de la table des matières */
     overflow-y: auto;
     /* Permet le défilement si la table des matières est longue */
