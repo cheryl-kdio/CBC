@@ -15,6 +15,12 @@ body {
     #toc_container>* {
         font-size: 12px;
     }
+
+    .section_one>.container {
+        flex-direction: column;
+    }
+
+
 }
 
 /* Réduire davantage la taille de la police lorsque la largeur de la fenêtre est inférieure à 576px */
@@ -25,6 +31,10 @@ body {
     .section_four>*,
     #toc_container>* {
         font-size: 10px;
+    }
+
+    .section_one>.container {
+        flex-direction: column;
     }
 }
 
@@ -107,11 +117,20 @@ img {
 
 .section_one>.container {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     gap: 50px;
     margin-bottom: 50px;
     margin-top: 30px;
     flex-wrap: wrap;
+}
+
+.section_one>.container>.hero {
+    flex: 2;
+}
+
+.section_one>.container>.placeholder {
+    flex: 1;
 }
 
 .section_three {
@@ -131,7 +150,6 @@ img {
 .navigation {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 16px;
     font-size: 18px;
     background: #091442;
@@ -145,11 +163,14 @@ img {
 
 .nav_items {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     margin-left: auto;
     align-items: center;
-    justify-content: space-between;
+
 }
+
+
 
 .nav_items>p {
     text-decoration: underline;
@@ -175,9 +196,6 @@ img {
     font-size: 30px;
 }
 
-.hero {
-    width: 50%;
-}
 
 .main-text {
     font-size: 38px;
@@ -483,12 +501,6 @@ input {
     height: 150px;
 }
 
-.content-container {
-    display: flex;
-    padding: 20px;
-    /* Ajoutez un peu d'espace autour du contenu */
-}
-
 
 
 #toc_container {
@@ -501,7 +513,7 @@ input {
     /* Distance depuis le haut de la page */
     right: 2%;
     /* Distance depuis le côté gauche de la page */
-    width: 400px;
+    width: auto;
     /* Largeur de la table des matières */
     overflow-y: auto;
     /* Permet le défilement si la table des matières est longue */
@@ -517,9 +529,10 @@ input {
 .toc_title {
     display: flex;
     font-weight: 700;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
-    margin: 10px;
+    margin: 1px;
 }
 
 #toc_container li,
