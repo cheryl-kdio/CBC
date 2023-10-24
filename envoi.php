@@ -1,13 +1,17 @@
 <?php
+// Activer l'affichage des erreurs
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if(isset($_POST['envoyer']) or $_SERVER["REQUEST_METHOD"] == "POST") {
-  $nom = $_POST['nom'];
-  $email = $_POST['email'];
-  $comment = $_POST['comment'];
+  // Sanitisation des données
+  $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
+  $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+  $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
   $service = filter_input(INPUT_POST, 'service', FILTER_SANITIZE_STRING);
-  $date = $_POST['date'];
-  $periode = $_POST['periode'];
-
-
+  $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
+  $periode = filter_input(INPUT_POST, 'periode', FILTER_SANITIZE_STRING);
 
   // Destinataire de l'e-mail
   $destinataire = 'cabinet.beaudelaire.conseil@gmail.com';
@@ -25,10 +29,10 @@ if(isset($_POST['envoyer']) or $_SERVER["REQUEST_METHOD"] == "POST") {
   $headers .= "Reply-To: $email\r\n";
 
   // Envoyer l'e-mail
-  if(mail($destinataire, $sujet, $contenu, $headers) && mail($destinataire2, $sujet, $contenu, $headers)) {
-    echo "<script type='text/javascript'>alert('Votre message a été envoyé avec succès');</script>" ;
+  if(mail($destinataire, $sujet, $contenu, $headers)) {
+    echo "<script type='text/javascript'>alert('Votre message a été envoyé avec succès');</script>";
   } else {
-    echo "<script type='text/javascript'>Une erreur s'est produite lors de l'envoi du message;</script>";
+    echo "<script type='text/javascript'>alert('Une erreur s'est produite lors de l'envoi du message.');</script>";
   }
 }
 ?>
